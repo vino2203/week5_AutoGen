@@ -1,0 +1,423 @@
+{
+ "session_id": "0c6f7ee5d353",
+ "status": "awaiting_approval",
+ "revision": 0,
+ "project": {
+  "project_description": "Order status by email and SMS, about 50 a day, from our FAQ document",
+  "options_to_compare": [
+   "rag",
+   "n8n",
+   "crewai",
+   "autogen"
+  ],
+  "requirements": {
+   "channels": [
+    "gmail",
+    "sms"
+   ],
+   "document_upload": true,
+   "messages_per_day": 50,
+   "human_approval_of_replies": false,
+   "multi_step_reasoning": false
+  },
+  "constraints": {
+   "budget_per_day_usd": 2.0,
+   "max_latency_ms": 1000,
+   "min_recall": 0.9,
+   "user_skill": "low-code",
+   "time_available_hours": 40.0,
+   "time_available": null
+  },
+  "weights": {
+   "fit_to_requirements": 0.3,
+   "cost": 0.25,
+   "setup_effort": 0.2,
+   "latency": 0.15,
+   "long_term_benefit": 0.1
+  }
+ },
+ "questions": [],
+ "assumptions": [
+  "Read the channels from the description.",
+  "Criteria weights not given; the default weights were used."
+ ],
+ "reports": [
+  {
+   "summary": "rag summary",
+   "fit_to_requirements": {
+    "covered": [
+     "document_upload"
+    ],
+    "missing": [
+     "channel:gmail",
+     "channel:sms"
+    ]
+   },
+   "setup_effort": {
+    "hours": 10.0,
+    "skill_required": "low-code",
+    "steps": [
+     {
+      "step": "Set it up",
+      "hours": 10.0
+     }
+    ]
+   },
+   "estimated_daily_cost_usd": 0.0875,
+   "estimated_latency_ms": 900,
+   "long_term_score": 7.0,
+   "expected_recall": 0.9,
+   "risks": [
+    "rag risk"
+   ],
+   "works_well_with": [],
+   "simple_design": "flowchart LR\n    U[\"Customer (Gmail)\"] --> N[\"Workflow\"]\n    N --> L[\"LLM writes the reply\"]\n    L --> R[\"Send reply\"]\n    R --> U",
+   "how_it_works": [
+    "1) a",
+    "2) b",
+    "3) c",
+    "4) d"
+   ],
+   "project_specific_notes": [
+    "note"
+   ],
+   "assumptions": [
+    "rag assumption"
+   ],
+   "agent_id": "agent_1_rag",
+   "framework": "RAG (Retrieval-Augmented Generation)"
+  },
+  {
+   "summary": "n8n summary",
+   "fit_to_requirements": {
+    "covered": [
+     "channel:gmail",
+     "channel:sms"
+    ],
+    "missing": [
+     "document_upload"
+    ]
+   },
+   "setup_effort": {
+    "hours": 6.0,
+    "skill_required": "low-code",
+    "steps": [
+     {
+      "step": "Set it up",
+      "hours": 6.0
+     }
+    ]
+   },
+   "estimated_daily_cost_usd": 0.2,
+   "estimated_latency_ms": 800,
+   "long_term_score": 8.0,
+   "expected_recall": null,
+   "risks": [
+    "n8n risk"
+   ],
+   "works_well_with": [
+    "rag"
+   ],
+   "simple_design": "flowchart LR\n    U[\"Customer (Gmail)\"] --> N[\"Workflow\"]\n    N --> L[\"LLM writes the reply\"]\n    L --> R[\"Send reply\"]\n    R --> U",
+   "how_it_works": [
+    "1) a",
+    "2) b",
+    "3) c",
+    "4) d"
+   ],
+   "project_specific_notes": [
+    "note"
+   ],
+   "assumptions": [
+    "n8n assumption"
+   ],
+   "agent_id": "agent_2_n8n",
+   "framework": "n8n (workflow automation)"
+  },
+  {
+   "summary": "crewai summary",
+   "fit_to_requirements": {
+    "covered": [
+     "channel:gmail",
+     "channel:sms",
+     "document_upload"
+    ],
+    "missing": []
+   },
+   "setup_effort": {
+    "hours": 24.0,
+    "skill_required": "code",
+    "steps": [
+     {
+      "step": "Set it up",
+      "hours": 24.0
+     }
+    ]
+   },
+   "estimated_daily_cost_usd": 0.32,
+   "estimated_latency_ms": 4500,
+   "long_term_score": 6.0,
+   "expected_recall": 0.9,
+   "risks": [
+    "crewai risk"
+   ],
+   "works_well_with": [
+    "rag"
+   ],
+   "simple_design": "flowchart LR\n    U[\"Customer (Gmail)\"] --> N[\"Workflow\"]\n    N --> L[\"LLM writes the reply\"]\n    L --> R[\"Send reply\"]\n    R --> U",
+   "how_it_works": [
+    "1) a",
+    "2) b",
+    "3) c",
+    "4) d"
+   ],
+   "project_specific_notes": [
+    "note"
+   ],
+   "assumptions": [
+    "crewai assumption"
+   ],
+   "agent_id": "agent_3_crewai",
+   "framework": "CrewAI (role-based agent crews)"
+  },
+  {
+   "summary": "autogen summary",
+   "fit_to_requirements": {
+    "covered": [
+     "channel:gmail",
+     "channel:sms",
+     "document_upload"
+    ],
+    "missing": []
+   },
+   "setup_effort": {
+    "hours": 28.0,
+    "skill_required": "code",
+    "steps": [
+     {
+      "step": "Set it up",
+      "hours": 28.0
+     }
+    ]
+   },
+   "estimated_daily_cost_usd": 0.28,
+   "estimated_latency_ms": 3000,
+   "long_term_score": 7.0,
+   "expected_recall": 0.9,
+   "risks": [
+    "autogen risk"
+   ],
+   "works_well_with": [
+    "rag"
+   ],
+   "simple_design": "flowchart LR\n    U[\"Customer (Gmail)\"] --> N[\"Workflow\"]\n    N --> L[\"LLM writes the reply\"]\n    L --> R[\"Send reply\"]\n    R --> U",
+   "how_it_works": [
+    "1) a",
+    "2) b",
+    "3) c",
+    "4) d"
+   ],
+   "project_specific_notes": [
+    "note"
+   ],
+   "assumptions": [
+    "autogen assumption"
+   ],
+   "agent_id": "agent_5_autogen",
+   "framework": "Autogen (conversational multi-agent framework)"
+  }
+ ],
+ "errors": [],
+ "recommendation": {
+  "recommended_stack": [
+   "n8n",
+   "rag"
+  ],
+  "headline": "Recommended: n8n + RAG",
+  "rationale": "Because the fake model says so.",
+  "ranking": [
+   {
+    "rank": 1,
+    "stack": [
+     "n8n",
+     "rag"
+    ],
+    "covered": [
+     "channel:gmail",
+     "channel:sms",
+     "document_upload"
+    ],
+    "missing": [],
+    "estimated_daily_cost_usd": 0.2875,
+    "estimated_latency_ms": 950,
+    "setup_hours": 16.0,
+    "skill_required": "low-code",
+    "expected_recall": null,
+    "criteria": {
+     "fit_to_requirements": 10.0,
+     "cost": 9.0,
+     "setup_effort": 6.0,
+     "latency": 6.0,
+     "long_term_benefit": 7.0
+    },
+    "weighted_score": 8.05,
+    "flags": [],
+    "passes": true,
+    "reasoning": "combined by the fake model"
+   },
+   {
+    "rank": 2,
+    "stack": [
+     "crewai"
+    ],
+    "covered": [
+     "channel:gmail",
+     "channel:sms",
+     "document_upload"
+    ],
+    "missing": [],
+    "estimated_daily_cost_usd": 0.32,
+    "estimated_latency_ms": 4500,
+    "setup_hours": 24.0,
+    "skill_required": "low-code",
+    "expected_recall": null,
+    "criteria": {
+     "fit_to_requirements": 10.0,
+     "cost": 9.0,
+     "setup_effort": 6.0,
+     "latency": 0.0,
+     "long_term_benefit": 7.0
+    },
+    "weighted_score": 7.15,
+    "flags": [
+     "latency ~4500 ms exceeds 1000 ms"
+    ],
+    "passes": false,
+    "reasoning": "combined by the fake model"
+   },
+   {
+    "rank": 3,
+    "stack": [
+     "autogen"
+    ],
+    "covered": [
+     "channel:gmail",
+     "channel:sms",
+     "document_upload"
+    ],
+    "missing": [],
+    "estimated_daily_cost_usd": 0.28,
+    "estimated_latency_ms": 3000,
+    "setup_hours": 28.0,
+    "skill_required": "low-code",
+    "expected_recall": null,
+    "criteria": {
+     "fit_to_requirements": 10.0,
+     "cost": 9.0,
+     "setup_effort": 6.0,
+     "latency": 0.0,
+     "long_term_benefit": 7.0
+    },
+    "weighted_score": 7.15,
+    "flags": [
+     "latency ~3000 ms exceeds 1000 ms"
+    ],
+    "passes": false,
+    "reasoning": "combined by the fake model"
+   },
+   {
+    "rank": 4,
+    "stack": [
+     "n8n"
+    ],
+    "covered": [
+     "channel:gmail",
+     "channel:sms"
+    ],
+    "missing": [
+     "document_upload"
+    ],
+    "estimated_daily_cost_usd": 0.2,
+    "estimated_latency_ms": 800,
+    "setup_hours": 6.0,
+    "skill_required": "low-code",
+    "expected_recall": null,
+    "criteria": {
+     "fit_to_requirements": 6.666666666666667,
+     "cost": 9.0,
+     "setup_effort": 6.0,
+     "latency": 6.0,
+     "long_term_benefit": 7.0
+    },
+    "weighted_score": 7.05,
+    "flags": [
+     "does not cover: document_upload"
+    ],
+    "passes": false,
+    "reasoning": "combined by the fake model"
+   },
+   {
+    "rank": 5,
+    "stack": [
+     "rag"
+    ],
+    "covered": [
+     "document_upload"
+    ],
+    "missing": [
+     "channel:gmail",
+     "channel:sms"
+    ],
+    "estimated_daily_cost_usd": 0.0875,
+    "estimated_latency_ms": 900,
+    "setup_hours": 10.0,
+    "skill_required": "low-code",
+    "expected_recall": null,
+    "criteria": {
+     "fit_to_requirements": 3.3333333333333335,
+     "cost": 9.0,
+     "setup_effort": 6.0,
+     "latency": 6.0,
+     "long_term_benefit": 7.0
+    },
+    "weighted_score": 6.05,
+    "flags": [
+     "does not cover: channel:gmail, channel:sms"
+    ],
+    "passes": false,
+    "reasoning": "combined by the fake model"
+   }
+  ],
+  "comparison_table_md": "| Rank | Stack | Score | Fit | Cost | Latency | Effort | Hard limits |\n|---|---|---|---|---|---|---|---|\n| 1 | n8n + RAG | 8.05 | 10.0 | 9.0 ($0.2875/day) | 6.0 (~950 ms) | 6.0 (~16 h) | pass |\n| 2 | CrewAI | 7.15 | 10.0 | 9.0 ($0.32/day) | 0.0 (~4500 ms) | 6.0 (~24 h) | FAIL: latency ~4500 ms exceeds 1000 ms |\n| 3 | Autogen | 7.15 | 10.0 | 9.0 ($0.28/day) | 0.0 (~3000 ms) | 6.0 (~28 h) | FAIL: latency ~3000 ms exceeds 1000 ms |\n| 4 | n8n | 7.05 | 6.666666666666667 | 9.0 ($0.2/day) | 6.0 (~800 ms) | 6.0 (~6 h) | FAIL: does not cover: document_upload |\n| 5 | RAG | 6.05 | 3.3333333333333335 | 9.0 ($0.0875/day) | 6.0 (~900 ms) | 6.0 (~10 h) | FAIL: does not cover: channel:gmail, channel:sms |",
+  "simple_design": "flowchart LR\n    U[\"Customer (Gmail)\"] --> N[\"Workflow\"]\n    N --> L[\"LLM writes the reply\"]\n    L --> R[\"Send reply\"]\n    R --> U",
+  "how_it_works": [
+   "1) a",
+   "2) b",
+   "3) c",
+   "4) d"
+  ],
+  "phased_plan": [
+   "Phase 1 (~2 h): start",
+   "Phase 2: go live"
+  ],
+  "estimated_daily_cost_usd": 0.2875,
+  "estimated_monthly_cost_usd": 8.62,
+  "upgrade_triggers": [
+   "volume grows"
+  ],
+  "risks": [
+   "a risk"
+  ],
+  "recall_checklist": [
+   "write 20 questions"
+  ],
+  "assumptions": [
+   "Read the channels from the description.",
+   "Criteria weights not given; the default weights were used.",
+   "rag assumption",
+   "n8n assumption"
+  ],
+  "warnings": []
+ },
+ "message": "Here is my suggestion. Reply `approve`, or `reject` (optionally with changed constraints/weights to re-score).\n\n## Recommended: n8n + RAG\n\nBecause the fake model says so.\n\n### Comparison\n| Rank | Stack | Score | Fit | Cost | Latency | Effort | Hard limits |\n|---|---|---|---|---|---|---|---|\n| 1 | n8n + RAG | 8.05 | 10.0 | 9.0 ($0.2875/day) | 6.0 (~950 ms) | 6.0 (~16 h) | pass |\n| 2 | CrewAI | 7.15 | 10.0 | 9.0 ($0.32/day) | 0.0 (~4500 ms) | 6.0 (~24 h) | FAIL: latency ~4500 ms exceeds 1000 ms |\n| 3 | Autogen | 7.15 | 10.0 | 9.0 ($0.28/day) | 0.0 (~3000 ms) | 6.0 (~28 h) | FAIL: latency ~3000 ms exceeds 1000 ms |\n| 4 | n8n | 7.05 | 6.666666666666667 | 9.0 ($0.2/day) | 6.0 (~800 ms) | 6.0 (~6 h) | FAIL: does not cover: document_upload |\n| 5 | RAG | 6.05 | 3.3333333333333335 | 9.0 ($0.0875/day) | 6.0 (~900 ms) | 6.0 (~10 h) | FAIL: does not cover: channel:gmail, channel:sms |\n\n### Simple design\n```mermaid\nflowchart LR\n    U[\"Customer (Gmail)\"] --> N[\"Workflow\"]\n    N --> L[\"LLM writes the reply\"]\n    L --> R[\"Send reply\"]\n    R --> U\n```\n\n### How it works\n- 1) a\n- 2) b\n- 3) c\n- 4) d\n\n### Phased plan\n- Phase 1 (~2 h): start\n- Phase 2: go live\n\n### Cost\n~$0.2875/day (~$8.62/month)\n\n### When to upgrade\n- volume grows\n\n### Risks\n- a risk\n\n### Recall validation checklist\n1. write 20 questions\n\n### Assumptions\n- Read the channels from the description.\n- Criteria weights not given; the default weights were used.\n- rag assumption\n- n8n assumption"
+}

@@ -1,0 +1,33 @@
+{
+ "session_id": "5bc1d13b8f0c",
+ "status": "needs_input",
+ "revision": 0,
+ "project": {
+  "project_description": "",
+  "options_to_compare": [],
+  "requirements": {
+   "channels": [],
+   "document_upload": null,
+   "messages_per_day": null,
+   "human_approval_of_replies": null,
+   "multi_step_reasoning": null
+  },
+  "constraints": {
+   "budget_per_day_usd": null,
+   "max_latency_ms": null,
+   "min_recall": null,
+   "user_skill": null,
+   "time_available_hours": null,
+   "time_available": null
+  },
+  "weights": null
+ },
+ "questions": [
+  "Describe the project in a sentence or two, for example: answer customers on WhatsApp from our FAQ."
+ ],
+ "assumptions": [],
+ "reports": [],
+ "errors": [],
+ "recommendation": null,
+ "message": "Describe the project in a sentence or two, for example: answer customers on WhatsApp from our FAQ."
+}

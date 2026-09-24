@@ -1,0 +1,6 @@
+{
+  "project_description": "Draft replies to customer emails in Gmail; a person approves each one",
+  "options_to_compare": ["n8n", "autogen"],
+  "requirements": { "human_approval_of_replies": true },
+  "constraints": { "user_skill": "no-code", "time_available": "3 days" }
+}

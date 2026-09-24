@@ -1,0 +1,18 @@
+{
+  "project_description": "Support bot that answers customers on WhatsApp and Gmail from our uploaded FAQ documents",
+  "options_to_compare": ["rag", "n8n", "crewai", "autogen"],
+  "requirements": {
+    "channels": ["gmail", "whatsapp"],
+    "document_upload": true,
+    "messages_per_day": 100,
+    "human_approval_of_replies": false
+  },
+  "constraints": {
+    "budget_per_day_usd": 2,
+    "max_latency_ms": 1000,
+    "min_recall": 0.9,
+    "user_skill": "low-code",
+    "time_available": "1 week"
+  },
+  "weights": null
+}

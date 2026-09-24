@@ -1,0 +1,45 @@
+{
+ "llm": "not configured",
+ "problem": "OPENAI_API_KEY is missing. Put it in Backend/.env (copy .env.example) and restart the backend.",
+ "model": "gpt-4o-mini",
+ "temperature": 0.2,
+ "max_tokens": 2048,
+ "agents": {
+  "agent_0_manager": {
+   "agent_id": "agent_0_manager",
+   "timestamp": "2026-09-24T14:40:01.676672+00:00",
+   "status": "completed",
+   "message": "needs a description"
+  },
+  "agent_1_rag": {
+   "agent_id": "agent_1_rag",
+   "timestamp": "2026-09-24T14:40:01.652664+00:00",
+   "status": "completed",
+   "message": "rag report"
+  },
+  "agent_2_n8n": {
+   "agent_id": "agent_2_n8n",
+   "timestamp": "2026-09-24T14:40:01.653500+00:00",
+   "status": "completed",
+   "message": "n8n report"
+  },
+  "agent_3_crewai": {
+   "agent_id": "agent_3_crewai",
+   "timestamp": "2026-09-24T14:40:01.654269+00:00",
+   "status": "completed",
+   "message": "crewai report"
+  },
+  "agent_5_autogen": {
+   "agent_id": "agent_5_autogen",
+   "timestamp": "2026-09-24T14:40:01.655030+00:00",
+   "status": "completed",
+   "message": "autogen report"
+  },
+  "agent_6_recommender": {
+   "agent_id": "agent_6_recommender",
+   "timestamp": "2026-09-24T14:40:01.656929+00:00",
+   "status": "completed",
+   "message": "recommended n8n + RAG"
+  }
+ }
+}

@@ -1,0 +1,20 @@
+model: gpt-4o-mini           # can be overridden with the LLM_MODEL env var
+temperature: 0.2
+max_tokens: 2048
+timeout_seconds: 90           # one framework agent (its AI calls) may take this long
+manager_timeout_seconds: 300  # the whole manager run
+retries: 1                   # extra attempt if an agent errors or times out
+
+default_constraints:
+  budget_per_day_usd: 2
+  max_latency_ms: 1000
+  min_recall: 0.9
+  user_skill: low-code       # no-code | low-code | code
+  time_available_hours: 40
+
+default_weights:
+  fit_to_requirements: 0.30
+  cost: 0.25
+  setup_effort: 0.20
+  latency: 0.15
+  long_term_benefit: 0.10
